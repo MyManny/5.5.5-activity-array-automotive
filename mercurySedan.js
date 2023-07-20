@@ -1,12 +1,12 @@
-//this includes the vehicle class as a module
+
 const VehicleModule = require("./vehicleBaseClass")
 
-//this shows how to call from this module...
+
 let v = new VehicleModule.Vehicle("Mercury", "Sedan", "1965", "color", "mileage");
 console.log(v.make)
 
 
-//After you write the derived Car class, you should test it out.
+
 class Car extends VehicleModule {
     constructor(make, model, year, color, mileage) {
         super(make, model, year, color, mileage);
@@ -17,7 +17,7 @@ class Car extends VehicleModule {
         this.fuel = 10;
         this.scheduleService = false;
     }
-//Note: You can code your derived Car class here or make a file named index.js and do it there.
+
 checkService() {
     if (this.mileage > 30000) {            
         this.scheduleService = true
