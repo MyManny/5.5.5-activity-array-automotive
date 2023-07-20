@@ -16,11 +16,48 @@ class Car extends VehicleModule {
         this.maxSpeed = 160;
         this.fuel = 10;
         this.scheduleService = false;
-    }}
+    }
 //Note: You can code your derived Car class here or make a file named index.js and do it there.
+checkService() {
+    if (this.mileage > 30000) {            
+        this.scheduleService = true
+        return this.scheduleService;                       
+    }
+}
+start() {
+    if (this.fuel > 0) {            
+        console.log("engine has started.");
+        return this.started = true
+    } else {
+        console.log("no fuel");
+        return this.started = false;
+    }
+}
+loadPassenger(num) {
+    if (this.passenger < this.maxPassengers) {
+        if ((num + this.passenger) <= this.maxPassengers) {
+            this.passenger = num;
+            return this.passenger;               
+        } else {
+            console.log(this.model + " " + this.make + " not have enough space to take all passengers.");
+
+        }
+    } else {
+        console.log(this.model + " " + this.make + " is full");
+    }
+}
 
 
-//TO DO: Code the Car subclass here or in index.js file, i.e. class Car extends Vehicle ...
+}
+
+let myCar = new Car('mercury', 'rad_sedan', '2002', 'white', 50000)
+
+myCar.start()
+myCar.loadPassenger(5)
+myCar.stop()
+myCar.checkService()
+
+console.log(myCar)
 
 
 
